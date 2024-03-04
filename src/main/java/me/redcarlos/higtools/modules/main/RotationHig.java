@@ -83,6 +83,7 @@ public class RotationHig extends Module {
         switch (yawLockMode.get()) {
             case Simple -> setYawAngle(yawAngle.get().floatValue());
             case Smart  -> setYawAngle(Math.round((mc.player.getYaw() + 1f) / 45f) * 45f);
+            case None   -> {}
         }
 
         switch (pitchLockMode.get()) {
@@ -90,6 +91,7 @@ public class RotationHig extends Module {
                 mc.player.setPitch(pitchAngle.get().floatValue());
             }
             case Smart  -> mc.player.setPitch(Math.round(((mc.player.getPitch() + 1f) / 30f) * 30f));
+            case None   -> {}
         }
     }
 
